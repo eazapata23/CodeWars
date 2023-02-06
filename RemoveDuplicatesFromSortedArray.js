@@ -5,3 +5,18 @@
 // Return k after placing the final result in the first k slots of nums.
 
 // Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
+
+// One way to solve this problem is to use two pointers. We can initialize a slow pointer and a fast pointer, where the slow pointer iterates through the array, and the fast pointer searches for the next unique number. Whenever the fast pointer finds a unique number, we increment the slow pointer, and replace the value at that position with the unique number. 
+
+var removeDuplicates = function (nums) {
+    if (nums.length === 0) return 0;
+
+    let slow = 0;
+    for (let fast = 1; fast < nums.length; fast++) {
+        if (nums[slow] !== nums[fast]) {
+            slow++;
+            nums[slow] = nums[fast];
+        }
+    }
+    return slow + 1;
+};
