@@ -20,3 +20,5 @@ var removeDuplicates = function (nums) {
     }
     return slow + 1;
 };
+
+//New Solution
