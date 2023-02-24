@@ -10,3 +10,5 @@ function reverseWords(str) {
     let reversedWords = words.map(word => word.split('').reverse().join(''));
     return reversedWords.join('');
 }
+
+//try another solution
